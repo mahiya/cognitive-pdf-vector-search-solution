@@ -1,0 +1,22 @@
+{
+    "skills": [
+        {
+            "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+            "uri": "{{CUSTOM_WEB_API_URI}}",
+            "batchSize": 25,
+            "timeout": "PT230S",
+            "inputs": [
+                {
+                    "name": "input",
+                    "source": "/document/text"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "output",
+                    "targetName": "contentVector"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "dataSourceName": "{{DATASOURCE_NAME}}",
+    "skillsetName": "{{SKILLSET_NAME}}",
+    "targetIndexName": "{{INDEX_NAME}}",
+    "parameters": {
+        "configuration": {
+            "dataToExtract": "contentAndMetadata",
+            "parsingMode": "jsonArray"
+        }
+    },
+    "fieldMappings": [
+        {
+            "sourceFieldName": "AzureSearch_DocumentKey",
+            "targetFieldName": "id",
+            "mappingFunction": {
+                "name": "base64Encode"
+            }
+        }
+    ],
+    "outputFieldMappings": [
+        {
+            "sourceFieldName": "/document/contentVector",
+            "targetFieldName": "contentVector"
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false,
+      "key": true
+    },
+    {
+      "name": "storageAccountName",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "containerName",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "blobName",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "pageNumber",
+      "type": "Edm.Int32",
+      "searchable": false,
+      "filterable": false,
+      "sortable": true,
+      "facetable": false
+    },
+    {
+      "name": "text",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "contentVector",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "dimensions": 1536,
+      "vectorSearchConfiguration": "vectorConfig"
+    }
+  ],
+  "vectorSearch": {
+    "algorithmConfigurations": [
+      {
+        "name": "vectorConfig",
+        "kind": "hnsw"
+      }
+    ]
+  },
+  "corsOptions": {
+    "allowedOrigins": [
+      "*"
+    ],
+    "maxAgeInSeconds": 300
+  },
+  "similarity": {
+    "@odata.type": "#Microsoft.Azure.Search.BM25Similarity",
+    "k1": 1.2,
+    "b": 0.75
+  }
+}
